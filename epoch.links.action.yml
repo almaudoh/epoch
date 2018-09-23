@@ -1,0 +1,6 @@
+entity.epoch.add_form:
+  route_name: 'entity.epoch.add_form'
+  title: 'Add Epoch'
+  appears_on:
+    - entity.epoch.collection
+

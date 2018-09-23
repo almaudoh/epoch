@@ -1,0 +1,35 @@
+<?php
+
+/**
+ * @file
+ * Contains epoch.module..
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\epoch\Entity\Epoch;
+
+/**
+ * Implements hook_help().
+ */
+function epoch_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the epoch module.
+    case 'help.page.epoch':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Epoch module allows automatic creation of tags that are based on time spans. These tags can then be used for classifying content.') . '</p>';
+      return $output;
+
+    default:
+      return '';
+  }
+}
+
+function epoch_cron() {
+  // @todo implement automatic creation of new epochs properly.
+  $query = \Drupal::entityQuery('epoch');
+  $epochs = $query
+    ->condition('start_time', REQUEST_TIME, '<') // Should be: start_time + duration.
+    ->execute();
+  $epochs = Epoch::loadMultiple($epochs);
+}

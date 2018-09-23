@@ -1,0 +1,5 @@
+name: Epoch
+type: module
+description: "Epoch module allows automatic creation of tags that are based on time spans. These tags can then be used for classifying content."
+core: 8.x
+package: Custom

@@ -1,0 +1,7 @@
+# Epoch menu items definition
+entity.epoch.collection:
+  title: 'Epochs'
+  route_name: entity.epoch.collection
+  description: 'Create and define time ranges that can be used to tag entities.'
+  parent: system.admin_structure
+  weight: 99

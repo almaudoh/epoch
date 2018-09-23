@@ -1,0 +1,28 @@
+epoch.epoch.*:
+  type: config_entity
+  label: 'Epoch config'
+  mapping:
+    id:
+      type: string
+      label: 'ID'
+    label:
+      type: label
+      label: 'Label'
+    uuid:
+      type: string
+    description:
+      type: int
+      label: 'Description'
+      description: 'The Epoch description.'
+    start_time:
+      type: int
+      label: 'Start time'
+      description: 'The timestamp from when this Epoch starts.'
+    duration:
+      type: int
+      label: 'Duration'
+      description: 'The duration that this Epoch lasts.'
+    autocreate:
+      type: bool
+      label: 'Autocreate'
+      description: 'Whether to automatically create a new Epoch when the latest one ends.'
